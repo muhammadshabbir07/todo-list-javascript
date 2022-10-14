@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+
+<body>
+
+    <div class="todo-app">
+        <div class="input-field">
+            <i class="fa fa-pencil-alt"></i>
+            <input id="todoInput" type="text" placeholder="Enter your value here...">
+            <i onclick="addTodo()" class="fa fa-plus"></i>
+        </div>
+        <div class="clear-btn">
+            <button onclick="clearAll()">Clear All</button>
+        </div>
+        <div class="todo-list">
+            <h4>Tasks</h4>
+            <ul id="todo-ul">
+                <label id="hide-li">Don't Have any Task yet..</label>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+<script src="./app.js"></script>
+
+</html>
