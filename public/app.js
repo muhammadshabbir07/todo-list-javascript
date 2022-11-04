@@ -1,11 +1,10 @@
 var getTodoUl = document.getElementById("todo-ul")
 var hideli = document.getElementById("hide-li")
+var getInput = document.getElementById("todoInput");
+var getError = document.getElementById("label-error");
 
 function addTodo() {
   hideli = document.getElementById("hide-li")
-  hideli.style.display = "none";
-
-  var getInput = document.getElementById("todoInput");
 
   //  create li and add input text
   var getTodoLi = document.createElement("li");
@@ -31,7 +30,25 @@ function addTodo() {
   getTododiv.appendChild(addIconTrash)
   getTodoLi.appendChild(getTododiv)
 
-  getTodoUl.appendChild(getTodoLi)
+  if (getInput.value != '') {
+    hideli.style.display = "none";
+    getError.style.display= 'none'
+    getTodoUl.appendChild(getTodoLi)  
+  }
+  else{
+    getError.style.display= 'block'
+    getError.style.color= 'red'
+  }
+
+  var getLiLength = getTodoUl.getElementsByTagName('li');
+
+  var todoObj = []
+  for (let i = 0; i < getLiLength.length; i++) {
+    const element = getLiLength[i].textContent;
+    todoObj.push({todoName : element})
+  }
+   getInput.value = '';
+  console.log(todoObj)
 }
 
 var x;
